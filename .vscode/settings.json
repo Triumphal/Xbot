@@ -1,13 +1,29 @@
 {
-    "C_Cpp.default.includePath": [
-        "${workspaceFolder}/**",
-        "/opt/ros/jazzy/include/**",
-        "/opt/include/**"
-    ],
     "C_Cpp.errorSquiggles": "disabled",
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "C_Cpp.clang_format_style": "file",
+    "editor.rulers": [
+        {"column": 120}
+    ],
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.type": "sameLine",
+    "C_Cpp.vcFormat.newLine.beforeElse": false,
+    "C_Cpp.vcFormat.indent.withinParentheses": "alignToParenthesis",
+    "C_Cpp.clang_format_sortIncludes": true,
+    "python.autoComplete.extraPaths": [
+        "/home/arcray/Desktop/Xbot/install/interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/arcray/Desktop/Xbot/install/interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "C_Cpp.clang_format_path": "",
     "files.associations": {
         "*.txt": "cmake",
         "*.sh": "shellscript",
+        "chrono": "cpp",
+        "qapplication": "cpp",
         "cctype": "cpp",
         "clocale": "cpp",
         "cmath": "cpp",
@@ -27,7 +43,6 @@
         "bitset": "cpp",
         "cfenv": "cpp",
         "charconv": "cpp",
-        "chrono": "cpp",
         "codecvt": "cpp",
         "compare": "cpp",
         "complex": "cpp",
@@ -87,7 +102,5 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    },
-    "C_Cpp.clang_format_fallbackStyle": "Google",
-    "C_Cpp.clang_format_style": "Google"
+    }
 }

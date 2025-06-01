@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(Qt5 REQUIRED COMPONENTS Widgets)
 find_package(interfaces REQUIRED)
 
 add_executable(camera_pub src/camera_pub.cpp)
@@ -24,6 +25,8 @@ ament_target_dependencies(camera_pub
   interfaces
 )
 
+# 设置 Qt5 的依赖
+target_link_libraries(camera_sub Qt5::Widgets)
 ament_target_dependencies(camera_sub
   rclcpp
   OpenCV
