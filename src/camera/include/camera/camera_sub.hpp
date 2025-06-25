@@ -33,7 +33,7 @@ class CameraSubscriber : public rclcpp::Node {
   void ImageDisplayWithQt(const cv::Mat& image);
 
  public:
-  CameraSubscriber();
+  CameraSubscriber(const std::string& tipic_name);
   ~CameraSubscriber() = default;
 };
 

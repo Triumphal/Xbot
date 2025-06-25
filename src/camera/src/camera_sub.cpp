@@ -7,9 +7,9 @@
 
 #include "camera/camera_sub.hpp"
 
-CameraSubscriber::CameraSubscriber() : Node("camera_subscriber") {
+CameraSubscriber::CameraSubscriber(const std::string &tipic_name) : Node("camera_subscriber") {
   subscription_ = this->create_subscription<FrameInfo>(
-      "camera/frame_info", 10, std::bind(&CameraSubscriber::ImageCallback, this, std::placeholders::_1));
+      tipic_name, 10, std::bind(&CameraSubscriber::ImageCallback, this, std::placeholders::_1));
 }
 
 void CameraSubscriber::ImageCallback(const FrameInfo::SharedPtr msg) {
@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
   // 初始化 ROS2
   rclcpp::init(argc, argv);
   QApplication app(argc, argv);
-  auto node = std::make_shared<CameraSubscriber>();
+  auto node = std::make_shared<CameraSubscriber>("detector/detect"); //
   std::thread spin_thread([&]() -> void {
     rclcpp::spin(node);
     rclcpp::shutdown();
