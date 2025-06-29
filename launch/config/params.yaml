@@ -1,0 +1,5 @@
+detect_sub_pub:
+  ros__parameters:
+    onnx_type: "cuda"
+    model_path: "./model/yolo11n.onnx"
+    yaml_file: "./model/coco8.yaml"

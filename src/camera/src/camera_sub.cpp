@@ -7,9 +7,13 @@
 
 #include "camera/camera_sub.hpp"
 
-CameraSubscriber::CameraSubscriber(const std::string &tipic_name) : Node("camera_subscriber") {
+CameraSubscriber::CameraSubscriber() : Node("camera_subscriber") {
+  // 声明参数并设置默认值
+  this->declare_parameter("sub_topic", "camera/frame_info");
+  std::string sub_topic = this->get_parameter("sub_topic").as_string();
+  RCLCPP_WARN(this->get_logger(),"subscribe topic name is %s",sub_topic.c_str());
   subscription_ = this->create_subscription<FrameInfo>(
-      tipic_name, 10, std::bind(&CameraSubscriber::ImageCallback, this, std::placeholders::_1));
+      sub_topic, 10, std::bind(&CameraSubscriber::ImageCallback, this, std::placeholders::_1));
 }
 
 void CameraSubscriber::ImageCallback(const FrameInfo::SharedPtr msg) {
@@ -63,7 +67,7 @@ int main(int argc, char *argv[]) {
   // 初始化 ROS2
   rclcpp::init(argc, argv);
   QApplication app(argc, argv);
-  auto node = std::make_shared<CameraSubscriber>("detector/detect"); //
+  auto node = std::make_shared<CameraSubscriber>(); 
   std::thread spin_thread([&]() -> void {
     rclcpp::spin(node);
     rclcpp::shutdown();

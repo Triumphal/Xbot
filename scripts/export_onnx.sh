@@ -1,1 +1,1 @@
-yolo export model=./model/yolo11n.pt format=onnx
+yolo export model=./model/yolo11n.pt format=engine

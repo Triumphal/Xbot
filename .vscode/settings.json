@@ -10,14 +10,6 @@
     "C_Cpp.vcFormat.newLine.beforeElse": false,
     "C_Cpp.vcFormat.indent.withinParentheses": "alignToParenthesis",
     "C_Cpp.clang_format_sortIncludes": true,
-    "python.autoComplete.extraPaths": [
-        "/home/arcray/Desktop/Xbot/install/interfaces/lib/python3.12/site-packages",
-        "/opt/ros/jazzy/lib/python3.12/site-packages"
-    ],
-    "python.analysis.extraPaths": [
-        "/home/arcray/Desktop/Xbot/install/interfaces/lib/python3.12/site-packages",
-        "/opt/ros/jazzy/lib/python3.12/site-packages"
-    ],
     "C_Cpp.clang_format_path": "",
     "files.associations": {
         "*.txt": "cmake",
